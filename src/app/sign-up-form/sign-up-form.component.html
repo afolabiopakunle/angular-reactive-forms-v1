@@ -2,18 +2,30 @@
   <label for="username" class="form-label">Username</label>
   <input
     type="text"
+    autocomplete="off"
     class="form-control"
+    [class.is-invalid]="username.invalid && username.touched"
     id="username"
     placeholder="Enter your username"
+    formControlName="username"
   />
+  <div *ngIf="username.touched && username.invalid" class="invalid-feedback">
+    Please choose a username.
+  </div>
+
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      [class.is-invalid]="password.invalid && password.touched"
+      id="password"
+      placeholder="Enter your password"
+      formControlName="password"
+    />
+    <div *ngIf="password.touched && password.invalid" class="invalid-feedback">
+      Please provide a password.
+    </div>
+  </div>
+  <button class="btn btn-success">Submit</button>
 </div>
-<div class="mb-3">
-<label for="password" class="form-label">Password</label>
-<input
-  type="password"
-  class="form-control"
-  id="password"
-  placeholder="Enter your password"
-/>
-</div>
-<button class="btn btn-success">Submit</button>
