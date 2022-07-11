@@ -24,7 +24,8 @@
       formControlName="password"
     />
     <div *ngIf="password.touched && password.invalid" class="invalid-feedback">
-      Please provide a password.
+      <div *ngIf="password.errors.required">Please provide a password.</div>
+      <div *ngIf="password.errors.minlength">Minimum of 8 characters.</div>
     </div>
   </div>
   <button class="btn btn-success">Submit</button>
