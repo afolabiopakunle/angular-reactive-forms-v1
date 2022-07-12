@@ -28,5 +28,5 @@
       <div *ngIf="password.errors.minlength">Minimum of 8 characters.</div>
     </div>
   </div>
-  <button class="btn btn-success">Submit</button>
+  <button [disabled]="form.invalid" class="btn btn-success">Submit</button>
 </div>
